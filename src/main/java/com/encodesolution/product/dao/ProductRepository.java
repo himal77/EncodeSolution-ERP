@@ -13,10 +13,11 @@ import java.util.UUID;
  */
 @Repository
 public class ProductRepository {
-    private final List<Product> productList = new ArrayList<Product>();
+    private final List<Product> productList = new ArrayList<>();
 
-    public void save(Product product) {
+    public Product save(Product product) {
         productList.add(product);
+        return product;
     }
 
     public Product getProduct(final long barcode) {
