@@ -5,6 +5,7 @@ import com.encodesolution.product.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -23,5 +24,9 @@ public class ProductService {
 
     public Product getProduct(long barcode) {
         return productRepository.getProduct(barcode);
+    }
+
+    public List<Product> getProducts() {
+        return productRepository.getProducts();
     }
 }

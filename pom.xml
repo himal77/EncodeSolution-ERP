@@ -11,6 +11,7 @@
 		<java.version>11</java.version>
 		<spring.version>2.6.3</spring.version>
 		<lombok.version>1.18.22</lombok.version>
+		<gson.version>2.9.0</gson.version>
 	</properties>
 
 	<dependencies>
@@ -29,7 +30,11 @@
 			<artifactId>lombok</artifactId>
 			<version>${lombok.version}</version>
 		</dependency>
-
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>${gson.version}</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -38,6 +43,14 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>${spring.version}</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>8</source>
+					<target>8</target>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

@@ -6,7 +6,6 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 /**
  * TODO use real database
@@ -24,5 +23,9 @@ public class ProductRepository {
         Optional<Product> toReturnProduct = productList.stream()
                 .filter(product -> product.getBarcode() == barcode).findFirst();
         return toReturnProduct.orElse(null);
+    }
+
+    public List<Product> getProducts() {
+        return productList;
     }
 }
